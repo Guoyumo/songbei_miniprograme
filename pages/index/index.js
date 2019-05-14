@@ -37,7 +37,14 @@ Page({
     startDate:"",
     endDate:"",
     startTime:"09:00",
-    time: "12:00"
+    time: "12:00",
+    wechatPay:{
+      timeStamp: "",
+      nonceStr: "",
+      package: "",
+      signType: 'MD5',
+      paySign: "",
+    }
   },
   onLoad() {
     var today = new Date(),
@@ -149,6 +156,7 @@ Page({
   },
 
   login(){
+    var self = this;
     wx.login({
       success(res) {
         if (res.code) {
@@ -161,22 +169,17 @@ Page({
             },
             success(result){
               console.log(result);
-              wx.requestPayment(
-                {
-                'timeStamp': result.data.timeStamp.toString(),
-                'nonceStr': result.data.nonceStr,
-                'package': result.data.package,
-                'signType': 'MD5',
-                'paySign': result.data.paySign,
-                'success':function(res){
-                  console.log(res);
-                  this.handleClick();
-                },
-                'fail':function(res){},
-                'complete':function(res){}
-                })
-                
-                
+
+              self.setData({
+                wechatPay:{
+                  timeStamp: result.data.timeStamp.toString(),
+                  nonceStr: result.data.nonceStr,
+                  package: result.data.package,
+                  signType: 'MD5',
+                  paySign: result.data.paySign
+                }
+              })
+              self.handleClick();       
             }
           })
         } else {
@@ -239,13 +242,28 @@ Page({
           that.setData({
             couldSubmit: true
           });
-          wx.navigateTo({
-            url: '../../pages/logs/success',
-          })
+          that.wechatPayment();
         }
       })
     }
 
+  },
+
+  wechatPayment(){
+    var self = this;
+    wx.requestPayment(
+    {
+      'timeStamp': self.data.wechatPay.timeStamp,
+      'nonceStr': self.data.wechatPay.nonceStr,
+      'package': self.data.wechatPay.package,
+      'signType': 'MD5',
+      'paySign': self.data.wechatPay.paySign,
+      'success':function(res){
+        console.log(res);
+    },
+      'fail':function(res){},
+      'complete':function(res){}
+    })
   },
   validate(postData) {
     let finishLocation = postData.finishLocation,
