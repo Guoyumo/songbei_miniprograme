@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "送呗",
+    "usingComponents": {
+        "wux-result": "../../dist/result/index"
+    }
+}

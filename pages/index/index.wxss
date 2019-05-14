@@ -1,0 +1,12 @@
+.margin-top-2{
+  margin-top: 2rpx;
+}
+.bg-white{
+  background-color:#fff;
+}
+.submit-button{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

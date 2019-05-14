@@ -1,0 +1,41 @@
+/* pages/lists/index.wxss */
+
+.list-bg{
+  /* height: 150rpx; */
+  background:#fff;
+  padding: 20rpx 10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top:20rpx;
+  box-shadow: 0 3px 12px rgba(210,217,223,1);
+  border-radius: 15rpx;
+}
+
+.list-logo{
+  width: 116rpx;
+  height: 116rpx;
+}
+.list-info{
+  /* height: 150rpx; */
+  position: relative;
+}
+.logo-title{
+  font-size:36rpx;
+  color:#1F94D8;
+}
+.list-address{
+    color: #999999;
+    font-size: 24rpx;
+    overflow: hidden;
+}
+.list-images{
+  margin: 25rpx 0rpx;
+}
+.list-phone{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.list-view{
+  padding-left: 10rpx;
+}

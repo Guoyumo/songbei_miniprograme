@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "赤峰大平台+",
+  "usingComponents": {
+    "i-row": "../../dist/row/index",
+    "i-col": "../../dist/col/index" ,
+    "wux-rater": "../../dist/rater/index",
+    "wux-icon": "../../dist/icon/index",
+    "i-icon": "../../dist/iicon/index"
+  }
+}

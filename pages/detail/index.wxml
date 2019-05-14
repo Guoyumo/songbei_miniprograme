@@ -1,0 +1,60 @@
+<swiper
+style='padding-top:20rpx; padding-bottom:20rpx;'
+>
+  <block wx:for="{{detail.images}}">
+    <swiper-item>
+      <i-row>
+                                  
+                <i-col span="24" i-class="col-class text-center">
+                    <image style="width: 100%; height: 300rpx; background-color: #fff;" mode="aspectFit" src="{{item.url}}" class="slide-image"  />    
+                </i-col>
+              </i-row>
+    </swiper-item>
+  </block>
+</swiper>
+
+<i-panel>
+  <i-row class="tital-row">
+    <i-col span="8" style="text-align:center;">
+      <image src="{{detail.logo}}"  class="detail-logo"></image>
+    </i-col>
+    <i-col span="16" class="detail-title">
+      
+      <i-row>
+        <view span="24" class="detail-title-name" >{{detail.name}}</view>
+         <i-col span="24" >{{detail.address}}</i-col>
+          <i-col span="24" >{{detail.rate}}</i-col>
+      </i-row>
+    </i-col>
+  </i-row>
+
+  <i-row class="deatil-detail">
+    <i-col span="24">
+      <view style='padding: 0 20rpx 20rpx 20rpx;'>
+      {{detail.details}}
+      </view>
+    </i-col>
+      <i-col span="24">
+        <image src="{{detail.info}}" width="100%;" mode="widthFix"></image>
+      </i-col>
+  </i-row>
+</i-panel>
+<view class="detail-bottom"></view>
+<i-row class="tab-bar">
+
+  <i-col span="12" >
+    <i-button class="call-phone detail-button" type="primary" bindtap='callPhone' i-class="detail-button">
+    <image style="height:50rpx; width:50rpx; position:absolute;top:20rpx;left:20rpx;" src="https://www.chifengbei.com/images/phoneicon.png" class="slide-image"  data-id="1" bindtap="viewDetail"/> 
+    商家电话
+    </i-button>
+  </i-col>
+  <i-col span="12">
+    <i-button bind:click="showWechat" type="success" class="submit-button">
+        <image style="height:50rpx; width:50rpx; position:absolute;top:20rpx;left:20rpx;" src="https://www.chifengbei.com/images/wehcaticon.png" class="slide-image"  data-id="1" bindtap="viewDetail"/> 
+    商家微信
+    </i-button>
+  </i-col>
+
+
+</i-row>
+

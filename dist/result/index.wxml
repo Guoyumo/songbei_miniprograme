@@ -1,0 +1,15 @@
+<view class="wux-class wux-result {{ fixed ? 'wux-result--fixed' : '' }}">
+    <view class="wux-result__hd">
+        <view wx:if="{{ resultIcon }}" class="wux-result__icon">
+            <icon type="{{ resultIcon.type }}" size="{{ resultIcon.size }}" color="{{ resultIcon.color }}" />
+        </view>
+        <block wx:else>
+            <slot name="header"></slot>
+        </block>
+    </view>
+    <view class="wux-result__bd">
+        <view class="wux-result__title">预约成功</view>
+        <view class="wux-result__desc">货运师傅将在十五分钟内联系您</view>
+        <slot></slot>
+    </view>
+</view>

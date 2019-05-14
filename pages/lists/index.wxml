@@ -1,0 +1,69 @@
+
+<swiper
+style='padding-top:20rpx;'
+>
+    <swiper-item>
+      <i-row>
+                                  
+                <i-col span="24" i-class="col-class text-center">
+                    <image style="width: 100%; height: 300rpx; background-color: #eee;" mode="aspectFit" src="https://www.chifengbei.com/images/silder1.jpg" class="slide-image"  data-id="11" bindtap="viewDetail"/>    
+                </i-col>
+              </i-row>
+    </swiper-item>
+
+    <swiper-item>
+      <i-row>
+                                  
+                <i-col span="24" i-class="col-class text-center">
+                    <image style="width: 100%; height: 300rpx; background-color: #eee;" mode="aspectFit" src="https://www.chifengbei.com/images/silder2.jpg" class="slide-image"  data-id="9" bindtap="viewDetail"/>    
+                </i-col>
+              </i-row>
+    </swiper-item>
+    <swiper-item>
+      <i-row>
+                                  
+                <i-col span="24" i-class="col-class text-center">
+                    <image style="width: 100%; height: 300rpx; background-color: #eee;" mode="aspectFit" src="https://www.chifengbei.com/images/silder3.png" class="slide-image" data-id="12" bindtap="viewDetail" />    
+                </i-col>
+              </i-row>
+    </swiper-item>
+
+</swiper>
+
+<block wx:for="{{ lists }}" wx:key="key">
+<view class="list-bg">
+  <i-row class="list-desc">                   
+      <i-col span="5" i-class="list-logo">
+          <image src="{{item.logo}}" class="list-logo" data-id="{{item.id}}" bindtap="viewDetail"></image>
+      </i-col>
+      <i-col span="19">
+        <i-row class="list-info">
+          <i-col span="24" data-id="{{item.id}}" bindtap="viewDetail" class="logo-title">{{item.name}}</i-col>
+        </i-row>
+        <i-row>
+          <i-col span="2"><i-icon type="coordinates" size="18"></i-icon></i-col>
+          <i-col span="18" class="list-address" data-id="{{item.id}}" bindtap="viewDetail"><view style="display:inline-block;padding-top:12rpx;">{{item.address}}</view></i-col>
+          <i-col span="4" data-phone="{{item.phone}}" bindtap="callPhone" style="text-align:center;">
+            <wux-icon type="ios-call"   data-phone="{{item.phone}}" bindtap="callPhone" size="16"/>
+          </i-col>
+        </i-row>
+      </i-col>
+  </i-row>
+  <view class="list-images">
+      <i-row>
+        <block wx:for="{{item.images}}"> 
+          <i-col span="8" style="max-height:46rpx;">
+            <image src="{{item.url}}" style="width:212rpx; height:92rpx;" mode="aspectFit"></image>
+          </i-col>
+        </block>
+    </i-row>
+  </view>
+<view class="list-view">
+  <i-row style="font-size:24rpx; color:#999999;"> {{item.weight}} 人浏览</i-row>
+</view>
+  
+</view>
+
+</block>
+
+<view style="height:50rpx;"></view>

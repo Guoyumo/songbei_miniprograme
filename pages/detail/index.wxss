@@ -1,0 +1,40 @@
+page{
+  background-color: #fff;
+}
+.slide-image{
+  margin:auto;
+}
+.detail-logo{
+  width: 150rpx;
+  height: 150rpx;
+}
+.detail-title{
+    font-size: 25rpx;
+}
+.detail-title-name{
+  font-size: 40rpx;
+  padding-left: 50rpx;
+}
+.deatil-detail{
+  padding:0rpx 20rpx;
+  color:rgb(117, 108, 108);
+  font-size: 30rpx;
+  text-align: center;
+  padding: 0 20rpx
+}
+.tab-bar{
+  position: fixed;
+  bottom:0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
+.detail-bottom{
+  margin-bottom:150rpx;
+  height:50rpx;
+
+}
+button{
+  border-radius: 20rpx !important;
+  position:relative;
+}
