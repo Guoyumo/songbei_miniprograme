@@ -55,13 +55,17 @@
         </view>
     </view>
   </i-panel>
-  <i-row>                              
-    <i-col span="24" i-class="col-class text-center" style="font-size:25rpx; padding-bottom:200rpx; display:block;">
+<i-row>                              
+    <i-col span="24" i-class="col-class text-center" style="font-size:25rpx; ">
         客服电话：0476-877-0611
+    </i-col>
+
+    <i-col span="24" style="font-size:25rpx;padding-bottom:200rpx; display:block;color:red;">
+    定金说明：若对方付运费，取件时返还定金
     </i-col>
 </i-row>
 
 
-<i-button bind:click="login" type="success" long="true" class="submit-button">立即用车</i-button>
+<i-button bind:click="login" type="success" long="true" class="submit-button">预付定金</i-button>
 
 
